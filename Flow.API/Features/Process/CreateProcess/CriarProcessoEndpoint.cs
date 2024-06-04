@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace Flow.API.Features.Process.CriarProcesso
+namespace Flow.API.Features.Process.CreateProcess
 {
     public class CriarProcessoEndpoint : IEndpoint
     {
