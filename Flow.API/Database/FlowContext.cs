@@ -1,5 +1,5 @@
 ﻿using Flow.API.Database.Configuration;
-using Flow.API.Entidades;
+using Flow.API.Entities;
 using Flow.Core.Contexts;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Storage;
@@ -11,8 +11,8 @@ namespace Flow.API.Database
         public FlowContext(DbContextOptions options) : base(options)
         { }
 
-        public virtual DbSet<Processo> ProcessoTb { get; set; }
-        public virtual DbSet<MapeamentoProcesso> MapeamentoProcessoTb { get; set; }
+        public virtual DbSet<Process> ProcessoTb { get; set; }
+        public virtual DbSet<ProcessMap> MapeamentoProcessoTb { get; set; }
 
         public IDbContextTransaction CurrentTransaction()
         {
@@ -26,7 +26,7 @@ namespace Flow.API.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProcessoEntityConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProcessEntityConfiguration).Assembly);
 
             base.OnModelCreating(modelBuilder);
         }

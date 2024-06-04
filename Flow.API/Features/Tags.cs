@@ -2,7 +2,7 @@
 {
     public static class Tags
     {
-        public const string Processo = "Processo";
-        public const string MapeamentoProcesso = "Mapeamento Processo";
+        public const string Process = "Process";
+        public const string ProcessMap = "Process Map";
     }
 }
