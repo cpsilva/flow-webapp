@@ -3,9 +3,9 @@ using MediatR;
 
 namespace Flow.API.Features.ProcessMap.GetProcessMap
 {
-    public class ObterMapeamentoProcessoQuery : IRequest<Result<MapeamentoProcessoResponse>>
+    public class GetProcessMapQuery : IRequest<Result<ProcessMapResponse>>
     {
-        public ObterMapeamentoProcessoQuery(int mapeamentoProcessoId)
+        public GetProcessMapQuery(int mapeamentoProcessoId)
         {
             MapeamentoProcessoId = mapeamentoProcessoId;
         }

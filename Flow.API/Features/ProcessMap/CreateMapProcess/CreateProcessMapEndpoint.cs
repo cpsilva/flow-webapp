@@ -2,19 +2,19 @@
 
 namespace Flow.API.Features.ProcessMap.CreateMapProcess
 {
-    public class CriarMapeamentoProcessoEndpoint : IEndpoint
+    public class CreateProcessMapEndpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost(
-                    "mapeamento-processo",
+                    "process-map",
                     async (
-                        CriarMapeamentoProcessoRequest request,
+                        CreateProcessMapRequest request,
                         ISender sender,
                         CancellationToken cancellationToken
                     ) =>
                     {
-                        var command = new CriarMapeamentoProcessoCommand(request);
+                        var command = new CreateProcessMapCommand(request);
                         return Results.Ok(await sender.Send(command, cancellationToken));
                     }
                 )

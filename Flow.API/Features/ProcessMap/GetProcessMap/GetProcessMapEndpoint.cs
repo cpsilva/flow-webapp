@@ -1,22 +1,20 @@
-﻿using Flow.API.Features.MapeamentoProcesso.ObterMapeamentoProcesso;
-using Flow.API.Features.ProcessMap.ObterMapeamentoProcesso;
-using MediatR;
+﻿using MediatR;
 
 namespace Flow.API.Features.ProcessMap.GetProcessMap
 {
-    public class ObterMapeamentoProcessoEndpoint : IEndpoint
+    public class GetProcessMapEndpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapGet(
-                    "mapeamento-processo/{mapeamentoProcessoId}",
+                    "process-map/{mapeamentoProcessoId}",
                     async (
                         int mapeamentoProcessoId,
                         ISender sender,
                         CancellationToken cancellationToken
                     ) =>
                     {
-                        var query = new ObterMapeamentoProcessoQuery(mapeamentoProcessoId);
+                        var query = new GetProcessMapQuery(mapeamentoProcessoId);
                         return Results.Ok(await sender.Send(query, cancellationToken));
                     }
                 )

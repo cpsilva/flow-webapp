@@ -1,21 +1,20 @@
-﻿using Flow.API.Features.ProcessMap.AtualizarMapeamentoProcesso;
-using MediatR;
+﻿using MediatR;
 
 namespace Flow.API.Features.ProcessMap.UpdateProcessMap
 {
-    public class AtualizarMapeamentoProcessoEndpoint : IEndpoint
+    public class UpdateProcessMapEndpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPut(
-                    "mapeamento-processo",
+                    "process-map",
                     async (
-                        AtualizarMapeamentoProcessoRequest request,
+                        UpdateProcessMapRequest request,
                         ISender sender,
                         CancellationToken cancellationToken
                     ) =>
                     {
-                        var command = new AtualizarMapeamentoProcessoCommand(request);
+                        var command = new UpdateProcessMapCommand(request);
                         return Results.Ok(await sender.Send(command, cancellationToken));
                     }
                 )

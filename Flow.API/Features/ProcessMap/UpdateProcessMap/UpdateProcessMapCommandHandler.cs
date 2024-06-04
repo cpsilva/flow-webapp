@@ -3,11 +3,11 @@ using MediatR;
 
 namespace Flow.API.Features.ProcessMap.UpdateProcessMap
 {
-    public class AtualizarMapeamentoProcessoCommandHandler
-        : IRequestHandler<AtualizarMapeamentoProcessoCommand, Result<int>>
+    public class UpdateProcessMapCommandHandler
+        : IRequestHandler<UpdateProcessMapCommand, Result<int>>
     {
         public Task<Result<int>> Handle(
-            AtualizarMapeamentoProcessoCommand request,
+            UpdateProcessMapCommand request,
             CancellationToken cancellationToken
         )
         {

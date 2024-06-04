@@ -3,11 +3,11 @@ using MediatR;
 
 namespace Flow.API.Features.ProcessMap.CreateMapProcess
 {
-    public class CriarMapeamentoProcessoCommandHandler
-        : IRequestHandler<CriarMapeamentoProcessoCommand, Result<int>>
+    public class CreateProcessMapCommandHandler
+        : IRequestHandler<CreateProcessMapCommand, Result<int>>
     {
         public Task<Result<int>> Handle(
-            CriarMapeamentoProcessoCommand request,
+            CreateProcessMapCommand request,
             CancellationToken cancellationToken
         )
         {
