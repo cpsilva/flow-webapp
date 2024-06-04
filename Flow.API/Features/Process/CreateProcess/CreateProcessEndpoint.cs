@@ -1,24 +1,24 @@
 ﻿using MediatR;
 
-namespace Flow.API.Features.ProcessMap.CreateMapProcess
+namespace Flow.API.Features.Process.CreateProcess
 {
-    public class CriarMapeamentoProcessoEndpoint : IEndpoint
+    public class CreateProcessEndpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
             app.MapPost(
-                    "mapeamento-processo",
+                    "process",
                     async (
-                        CriarMapeamentoProcessoRequest request,
+                        CreateProcessRequest request,
                         ISender sender,
                         CancellationToken cancellationToken
                     ) =>
                     {
-                        var command = new CriarMapeamentoProcessoCommand(request);
+                        var command = new CreateProcessCommand();
                         return Results.Ok(await sender.Send(command, cancellationToken));
                     }
                 )
-                .WithTags(Tags.ProcessMap);
+                .WithTags(Tags.Process);
         }
     }
 }

@@ -1,6 +1,4 @@
 ﻿namespace Flow.API.Features.ProcessMap.CreateMapProcess
 {
-    public class CriarMapeamentoProcessoRequest
-    {
-    }
+    public class CriarMapeamentoProcessoRequest { }
 }

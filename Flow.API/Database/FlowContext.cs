@@ -8,11 +8,11 @@ namespace Flow.API.Database
 {
     public class FlowContext : DbContext, IDbContext
     {
-        public FlowContext(DbContextOptions options) : base(options)
-        { }
+        public FlowContext(DbContextOptions options)
+            : base(options) { }
 
-        public virtual DbSet<Process> ProcessoTb { get; set; }
-        public virtual DbSet<ProcessMap> MapeamentoProcessoTb { get; set; }
+        public virtual DbSet<Process> ProcessTb { get; set; }
+        public virtual DbSet<ProcessMap> ProcessMapTb { get; set; }
 
         public IDbContextTransaction CurrentTransaction()
         {
@@ -26,7 +26,9 @@ namespace Flow.API.Database
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ProcessEntityConfiguration).Assembly);
+            modelBuilder.ApplyConfigurationsFromAssembly(
+                typeof(ProcessEntityConfiguration).Assembly
+            );
 
             base.OnModelCreating(modelBuilder);
         }

@@ -8,11 +8,18 @@ namespace Flow.API.Features.ProcessMap.GetProcessMap
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapGet("mapeamento-processo/{mapeamentoProcessoId}", async (int mapeamentoProcessoId, ISender sender, CancellationToken cancellationToken) =>
-            {
-                var query = new ObterMapeamentoProcessoQuery(mapeamentoProcessoId);
-                return Results.Ok(await sender.Send(query, cancellationToken));
-            })
+            app.MapGet(
+                    "mapeamento-processo/{mapeamentoProcessoId}",
+                    async (
+                        int mapeamentoProcessoId,
+                        ISender sender,
+                        CancellationToken cancellationToken
+                    ) =>
+                    {
+                        var query = new ObterMapeamentoProcessoQuery(mapeamentoProcessoId);
+                        return Results.Ok(await sender.Send(query, cancellationToken));
+                    }
+                )
                 .WithTags(Tags.ProcessMap);
         }
     }

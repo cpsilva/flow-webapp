@@ -5,9 +5,6 @@ namespace Flow.API.Features.ProcessMap.CreateMapProcess
 {
     public class CriarMapeamentoProcessoCommand : IRequest<Result<int>>
     {
-        public CriarMapeamentoProcessoCommand(CriarMapeamentoProcessoRequest request)
-        {
-
-        }
+        public CriarMapeamentoProcessoCommand(CriarMapeamentoProcessoRequest request) { }
     }
 }

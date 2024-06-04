@@ -7,11 +7,18 @@ namespace Flow.API.Features.ProcessMap.UpdateProcessMap
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPut("mapeamento-processo", async (AtualizarMapeamentoProcessoRequest request, ISender sender, CancellationToken cancellationToken) =>
-            {
-                var command = new AtualizarMapeamentoProcessoCommand(request);
-                return Results.Ok(await sender.Send(command, cancellationToken));
-            })
+            app.MapPut(
+                    "mapeamento-processo",
+                    async (
+                        AtualizarMapeamentoProcessoRequest request,
+                        ISender sender,
+                        CancellationToken cancellationToken
+                    ) =>
+                    {
+                        var command = new AtualizarMapeamentoProcessoCommand(request);
+                        return Results.Ok(await sender.Send(command, cancellationToken));
+                    }
+                )
                 .WithTags(Tags.ProcessMap);
         }
     }

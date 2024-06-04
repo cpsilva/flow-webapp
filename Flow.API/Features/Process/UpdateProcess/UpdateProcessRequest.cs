@@ -1,6 +1,4 @@
 ﻿namespace Flow.API.Features.Process.UpdateProcess
 {
-    public class AtualizarProcessoRequest
-    {
-    }
+    public class UpdateProcessRequest { }
 }

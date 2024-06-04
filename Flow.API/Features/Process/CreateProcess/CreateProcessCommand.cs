@@ -2,7 +2,5 @@
 
 namespace Flow.API.Features.Process.CreateProcess
 {
-    public class CriarProcessoCommand : IRequest<int>
-    {
-    }
+    public class CreateProcessCommand : IRequest<int> { }
 }

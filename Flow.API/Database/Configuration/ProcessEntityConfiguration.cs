@@ -17,17 +17,15 @@ namespace Flow.API.Database.Configuration
 
             builder.HasKey(t => t.Id).HasName($"Pk_{_tableName}");
 
-            builder.Property(t => t.ProcessoId).IsRequired();
+            builder.Property(t => t.ProcessId).IsRequired();
 
-            builder.Property(t => t.ProcessoPaiId);
+            builder.Property(t => t.OriginProcessId);
 
-            builder.Property(t => t.Ativo)
-                .HasDefaultValue(true);
+            builder.Property(t => t.Active).HasDefaultValue(true);
 
-            builder.Property(t => t.DataInclusao)
-                   .HasDefaultValueSql("now()");
+            builder.Property(t => t.InclusionDate).HasDefaultValueSql("now()");
 
-            builder.Property(t => t.DataAlteracao);
+            builder.Property(t => t.UpdatedDate);
         }
     }
 }

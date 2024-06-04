@@ -1,13 +1,10 @@
 ﻿namespace Flow.API.Features.Process.UpdateProcess
 {
-    public class AtualizarProcessoEndpoint : IEndpoint
+    public class UpdateProcessEndpoint : IEndpoint
     {
         public void MapEndpoint(IEndpointRouteBuilder app)
         {
-            app.MapPut("processo", async (AtualizarProcessoRequest request) =>
-            {
-
-            })
+            app.MapPut("process", async (UpdateProcessRequest request) => { })
                 .WithTags(Tags.Process);
         }
     }
